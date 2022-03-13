@@ -1,0 +1,169 @@
+.Header {
+  width: 100%;
+  background-color: rgba(21, 10, 1, 0.2);
+  border: 1px solid rgba(152, 147, 147, 0.2);
+  margin-bottom: 60px;
+}
+
+.HeaderContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.LogoContainer {
+  position: relative;
+  padding: 25px 15px 42px 25px;
+  border-left: 1px solid rgb(152, 147, 147);
+  border-right: 1px solid rgb(152, 147, 147);
+}
+
+.LogoContainer::after, .LogoContainer::before {
+  content: "";
+  z-index: 1;
+  display: block;
+  position: absolute;
+}
+
+.LogoContainer::before {
+  width: calc(100% + 4px);
+  height: 80%;
+  transition: height 0.6s;
+}
+
+.LogoContainer::after {
+  height: calc(100% + 4px);
+  width: 90%;
+  transition: width 0.6s;
+}
+
+.Logo {
+  position: relative;
+  z-index: 2;
+  max-width: 275px;
+  width: 100%;
+}
+
+.Nav {
+  width: 100%;
+  max-width: 725px;
+}
+
+.NavMenu {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.NavMenuItem {
+  font-size: 16px;
+  color: rgb(255, 255, 255) !important;
+  line-height: 1.375;
+  text-align: left;
+  padding: 4px 0;
+  transition: color ease-in-out .3s;
+  position: relative;
+}
+
+.NavMenuItem::before {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  opacity: 0;
+  background-color: rgb(137, 135, 136);
+  transition: opacity ease-in-out .3s;
+}
+
+.NavMenuItem:hover::before {
+  opacity: 1;
+}
+
+.NavMenuItem:hover {
+  color: rgb(137, 135, 136);
+}
+
+.Burger {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .Burger {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 25px;
+    z-index: 110;
+    transition: ease-in-out .3s;
+  }
+
+  .Burger::after, .Burger::before, .Burger span {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    transition: ease-in-out .3s;
+  }
+
+  .Burger span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .Burger::after {
+    bottom: 0;
+  }
+
+  .Burger.active::before {
+    transform: rotate(45deg);
+    top: 50%;
+  }
+
+  .Burger.active::after {
+    bottom: 50%;
+    transform: rotate(-45deg);
+  }
+
+  .Burger.active span {
+    opacity: 0;
+  }
+
+  .Logo {
+    z-index: 110;
+  }
+
+  .Nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .NavMenu {
+    position: absolute;
+    flex-direction: column;
+    left: 120%;
+    z-index: 100;
+    top: 0;
+    height: 100%;
+    justify-content: flex-start;
+    padding-top: 100px;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    transition: ease-in-out .3s;
+  }
+
+  .NavMenu.active {
+    left: 0;
+  }
+
+  .NavMenuItem {
+    font-size: 24px;
+    line-height: 60px;
+  }
+}
