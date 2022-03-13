@@ -7,6 +7,7 @@ function App() {
   const background = useRef(null);
   return (
     <div className={styles.Wrapper}>
+      <img className={styles.BackgroundImage} src='/images/space.png' alt="" />
       <Header></Header>
       <BackgroundContent></BackgroundContent>
     </div>

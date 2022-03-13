@@ -17,7 +17,6 @@ export default function Header() {
   }, []);
   return (
     <header className={styles.Header}>
-      <div className={styles.Blur}></div>
       <div className={`${styles.HeaderContainer} ${wrapper.WrapperContainer}`}>
         <div className={styles.LogoContainer}>
           <img className={styles.Logo} src="/images/logo.png" alt="" />

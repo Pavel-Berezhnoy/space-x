@@ -6,9 +6,6 @@
   align-items: center;
   position: relative;
   overflow-x: hidden;
-  background-image: url(../../../public/images/space.png);
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .WrapperContainer {
@@ -16,6 +13,13 @@
   padding: 0 15px;
   width: 100%;
   margin: 0 auto;
+}
+
+.BackgroundImage {
+  height: 660px;
+  position: absolute;
+  object-fit: cover;
+  z-index: -1;
 }
 
 @media (max-width:992px) {
